@@ -2362,7 +2362,7 @@ class MaskRCNN():
              workers = 0
              api.send("outstring", "Test mcrnn 2")
             
-	self.keras_model.fit_generator(
+        self.keras_model.fit_generator(
             train_generator,
             initial_epoch=self.epoch,
             epochs=epochs,
