@@ -2352,7 +2352,7 @@ class MaskRCNN():
         log("Checkpoint Path: {}".format(self.checkpoint_path))
         self.set_trainable(layers)
         self.compile(learning_rate, self.config.LEARNING_MOMENTUM)
-
+	api.send("outstring", "Test mcrnn")
         # Work-around for Windows: Keras fails on Windows when using
         # multiprocessing workers. See discussion here:
         # https://github.com/matterport/Mask_RCNN/issues/13#issuecomment-353124009
@@ -2361,7 +2361,8 @@ class MaskRCNN():
         else:
         #    workers = multiprocessing.cpu_count()
              workers = 0
-             #api.logger.info("Marcus: Worker 0 ") 
+             api.send("outstring", "Test mcrnn 2")
+            
 	self.keras_model.fit_generator(
             train_generator,
             initial_epoch=self.epoch,
