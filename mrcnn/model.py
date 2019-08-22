@@ -2360,7 +2360,7 @@ class MaskRCNN():
         else:
         #    workers = multiprocessing.cpu_count()
              workers = 0
-             api.send("outstring", "Test mcrnn 2")
+             log("Marcus inside: W=0")
             
         self.keras_model.fit_generator(
             train_generator,
